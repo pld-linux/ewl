@@ -7,7 +7,7 @@ License:	BSD
 Group:		X11/Libraries
 #Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
 Source0:	ftp://ftp.sparky.homelinux.org/pub/e17/%{name}-%{version}-%{_snap}.tar.gz
-# Source0-md5:	3ec91875fa1f5f0733da62bbe03ea017
+# Source0-md5:	3c25a2544fab78de5c9e66e7d6bf1968
 URL:		http://enlightenment.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
