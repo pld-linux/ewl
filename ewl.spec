@@ -1,20 +1,17 @@
 Summary:	Enlightenment Widget Library
 Summary(pl):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
-Version:	0.0.4.003
-%define	_snap	20050707
-Release:	0.%{_snap}.0.1
+Version:	0.0.4.004
+Release:	1
 License:	BSD
 Group:		X11/Libraries
-#Source0:	http://dl.sourceforge.net/enlightenment/%{name}-%{version}.tar.gz
-Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.gz
-# Source0-md5:	008c998c511e424165abdfbf319eaa00
+Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
+# Source0-md5:	aed8f9eaf06ed5f0120d6f9ce2dc985c
 URL:		http://enlightenment.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	edje-devel
 BuildRequires:	emotion-devel
-BuildRequires:	etox-devel
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,11 +47,22 @@ Static EWL library.
 Statyczna biblioteka EWL.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+echo 'AC_DEFUN([AC_C___ATTRIBUTE__],
+ [
+  AC_MSG_CHECKING(for __attribute__)
+  AC_CACHE_VAL(ac_cv___attribute__, [
+  AC_TRY_COMPILE([#include <stdlib.h>],
+  [int func(int x); int foo(int x __attribute__ ((unused))) { exit(1); }],
+  ac_cv___attribute__=yes, ac_cv___attribute__=no)])
+  if test "$ac_cv___attribute__" = "yes"; then
+    AC_DEFINE(HAVE___ATTRIBUTE__, 1, [Define to 1 if compiler has __attribute__])
+  fi
+  AC_MSG_RESULT($ac_cv___attribute__)])' > acinclude.m4
 
 %build
 %{__libtoolize}
-%{__aclocal} -I m4
+%{__aclocal}
 %{__autoconf}
 %{__autoheader}
 %{__automake}
