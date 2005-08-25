@@ -7,7 +7,7 @@ License:	BSD
 Group:		X11/Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	aed8f9eaf06ed5f0120d6f9ce2dc985c
-URL:		http://enlightenment.org/
+URL:		http://enlightenment.org/Libraries/Ewl/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	edje-devel
