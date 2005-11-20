@@ -5,7 +5,7 @@ Version:	0.0.4.004
 %define	_snap	20051118
 Release:	0.%{_snap}.1
 License:	BSD
-Group:		X11/Libraries
+Group:		Libraries
 #Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.bz2
 # Source0-md5:	f5b5701f01006e88ace5f7339403615e
@@ -28,10 +28,14 @@ podstawowych bibliotek Englightenmenta).
 
 %package libs
 Summary:	EWL library
-Group:		X11/Libraries
+Summary(pl):	Biblioteka EWL
+Group:		Libraries
 
 %description libs
 EWL library.
+
+%description libs -l pl
+Biblioteka EWL.
 
 %package devel
 Summary:	EWL header files and test programs
@@ -78,8 +82,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post libs	-p /sbin/ldconfig
-%postun libs	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
