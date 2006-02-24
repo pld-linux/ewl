@@ -5,14 +5,14 @@
 Summary:	Enlightenment Widget Library
 Summary(pl):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
-Version:	0.0.4.004
-%define	_snap	20051118
-Release:	0.%{_snap}.1
+Version:	0.0.4.005
+%define	_snap	20060223
+Release:	1.%{_snap}.1
 License:	BSD
 Group:		Libraries
 #Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	f5b5701f01006e88ace5f7339403615e
+# Source0-md5:	5a781fd40fc552ab7bcbdbf9d23fbe70
 URL:		http://enlightenment.org/Libraries/Ewl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -22,6 +22,8 @@ BuildRequires:	emotion-devel
 BuildRequires:	libtool
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%undefine	__cxx
 
 %description
 EWL is a widget library which uses the E Foundation Libraries (EFL).
