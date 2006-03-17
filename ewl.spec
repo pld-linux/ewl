@@ -5,14 +5,15 @@
 Summary:	Enlightenment Widget Library
 Summary(pl):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
-Version:	0.0.4.005
-%define	_snap	20060312
-Release:	1.%{_snap}.1
+Version:	0.0.4.006
+#%define	_snap	20060312
+Release:	1
+#.%{_snap}.1
 License:	BSD
 Group:		Libraries
-#Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.bz2
-# Source0-md5:	b3fa07b96e210430cab9bc7b2712e0d5
+Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
+# Source0-md5:	82b654ac530d9f1e9b4d529a05a5c064
+#Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.bz2
 URL:		http://enlightenment.org/Libraries/Ewl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -68,14 +69,15 @@ Static EWL library.
 Statyczna biblioteka EWL.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+# -n %{name}
 
 %build
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
+#%%{__libtoolize}
+#%%{__aclocal} -I m4
+#%%{__autoconf}
+#%%{__autoheader}
+#%%{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
 %{__make}
