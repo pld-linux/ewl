@@ -6,14 +6,11 @@ Summary:	Enlightenment Widget Library
 Summary(pl):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
 Version:	0.0.4.007
-#%define	_snap	20060312
 Release:	1
-#.%{_snap}.1
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
 # Source0-md5:	29bc8aec80b53480c2ea53aea1796e15
-#Source0:	http://sparky.homelinux.org/snaps/enli/e17/libs/%{name}-%{_snap}.tar.bz2
 URL:		http://enlightenment.org/Libraries/Ewl/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -70,14 +67,8 @@ Statyczna biblioteka EWL.
 
 %prep
 %setup -q
-# -n %{name}
 
 %build
-#%%{__libtoolize}
-#%%{__aclocal} -I m4
-#%%{__autoconf}
-#%%{__autoheader}
-#%%{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
 %{__make}
