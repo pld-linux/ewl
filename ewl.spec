@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Enlightenment Widget Library
-Summary(pl.UTF-8):   Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
+Summary(pl.UTF-8):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
 Version:	0.0.4.007
 Release:	2
@@ -32,7 +32,7 @@ podstawowych bibliotek Englightenmenta).
 
 %package libs
 Summary:	EWL library
-Summary(pl.UTF-8):   Biblioteka EWL
+Summary(pl.UTF-8):	Biblioteka EWL
 Group:		Libraries
 
 %description libs
@@ -43,7 +43,7 @@ Biblioteka EWL.
 
 %package devel
 Summary:	EWL header files and test programs
-Summary(pl.UTF-8):   Pliki nagłówkowe i programy testowe dla biblioteki EWL
+Summary(pl.UTF-8):	Pliki nagłówkowe i programy testowe dla biblioteki EWL
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -55,7 +55,7 @@ Pliki nagłówkowe i programy testowe dla biblioteki EWL.
 
 %package static
 Summary:	Static EWL library
-Summary(pl.UTF-8):   Statyczna biblioteka EWL
+Summary(pl.UTF-8):	Statyczna biblioteka EWL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
