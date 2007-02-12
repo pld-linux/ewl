@@ -3,7 +3,7 @@
 %bcond_without	static_libs	# don't build static library
 #
 Summary:	Enlightenment Widget Library
-Summary(pl):	Biblioteka widget體 Enlightenmenta (Enlightenment Widget Library)
+Summary(pl.UTF-8):   Biblioteka widget贸w Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
 Version:	0.0.4.007
 Release:	2
@@ -26,43 +26,43 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 EWL is a widget library which uses the E Foundation Libraries (EFL).
 
-%description -l pl
-EWL to biblioteka widget體 u縴waj眂a EFL (E Foundation Libraries -
+%description -l pl.UTF-8
+EWL to biblioteka widget贸w u偶ywaj膮ca EFL (E Foundation Libraries -
 podstawowych bibliotek Englightenmenta).
 
 %package libs
 Summary:	EWL library
-Summary(pl):	Biblioteka EWL
+Summary(pl.UTF-8):   Biblioteka EWL
 Group:		Libraries
 
 %description libs
 EWL library.
 
-%description libs -l pl
+%description libs -l pl.UTF-8
 Biblioteka EWL.
 
 %package devel
 Summary:	EWL header files and test programs
-Summary(pl):	Pliki nag丑wkowe i programy testowe dla biblioteki EWL
+Summary(pl.UTF-8):   Pliki nag艂贸wkowe i programy testowe dla biblioteki EWL
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 EWL header files and test programs.
 
-%description devel -l pl
-Pliki nag丑wkowe i programy testowe dla biblioteki EWL.
+%description devel -l pl.UTF-8
+Pliki nag艂贸wkowe i programy testowe dla biblioteki EWL.
 
 %package static
 Summary:	Static EWL library
-Summary(pl):	Statyczna biblioteka EWL
+Summary(pl.UTF-8):   Statyczna biblioteka EWL
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static EWL library.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Statyczna biblioteka EWL.
 
 %prep
