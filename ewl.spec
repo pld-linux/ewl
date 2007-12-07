@@ -6,7 +6,7 @@ Summary:	Enlightenment Widget Library
 Summary(pl.UTF-8):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
 Version:	0.5.1.008
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
 Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
