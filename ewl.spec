@@ -2,6 +2,13 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
+%define		ecore_ver	0.9.9.038
+%define		edje_ver	0.5.0.038
+%define		efreet_ver	0.0.3
+%define		emotion_ver	0.0.1
+%define		epsilon_ver	0.3.0.008
+%define		evas_ver	0.9.9.038
+
 Summary:	Enlightenment Widget Library
 Summary(pl.UTF-8):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
@@ -15,13 +22,13 @@ URL:		http://enlightenment.org/p.php?p=about/libs/ewl
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.4
 # ecore-file ecore-txt
-BuildRequires:	ecore-devel >= 0.9.9.038
-BuildRequires:	edje >= 0.5.0.038
-BuildRequires:	edje-devel >= 0.5.0.038
-BuildRequires:	efreet-devel >= 0.0.3
-BuildRequires:	emotion-devel >= 0.0.1
-BuildRequires:	epsilon-devel >= 0.3.0.008
-BuildRequires:	evas-devel >= 0.9.9.038
+BuildRequires:	ecore-devel >= %{ecore_ver}
+BuildRequires:	edje >= %{edje_ver}
+BuildRequires:	edje-devel >= %{edje_ver}
+BuildRequires:	efreet-devel >= %{efreet_ver}
+BuildRequires:	emotion-devel >= %{emotion_ver}
+BuildRequires:	epsilon-devel >= %{epsilon_ver}
+BuildRequires:	evas-devel >= %{evas_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	xorg-lib-libX11-devel
@@ -41,13 +48,13 @@ podstawowych bibliotek Englightenmenta).
 Summary:	EWL library
 Summary(pl.UTF-8):	Biblioteka EWL
 Group:		Libraries
-Requires:	ecore-file >= 0.9.9.038
-Requires:	ecore-txt >= 0.9.9.038
-Requires:	edje-libs >= 0.5.0.038
-Requires:	efreet >= 0.0.3
-Requires:	emotion >= 0.0.1
-Requires:	epsilon-libs >= 0.3.0.008
-Requires:	evas >= 0.9.9.038
+Requires:	ecore-file >= %{ecore_ver}
+Requires:	ecore-txt >= %{ecore_ver}
+Requires:	edje-libs >= %{edje_ver}
+Requires:	efreet >= %{efreet_ver}
+Requires:	emotion >= %{emotion_ver}
+Requires:	epsilon-libs >= %{epsilon_ver}
+Requires:	evas >= %{evas_ver}
 
 %description libs
 EWL library.
@@ -61,12 +68,12 @@ Summary(pl.UTF-8):	Pliki nagłówkowe i programy testowe dla biblioteki EWL
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 # ecore-file ecore-txt
-Requires:	ecore-devel >= 0.9.9.038
-Requires:	edje-devel >= 0.5.0.038
-Requires:	efreet-devel >= 0.0.3
-Requires:	emotion-devel >= 0.0.1
-Requires:	epsilon-devel >= 0.3.0.008
-Requires:	evas-devel >= 0.9.9.038
+Requires:	ecore-devel >= %{ecore_ver}
+Requires:	edje-devel >= %{edje_ver}
+Requires:	efreet-devel >= %{efreet_ver}
+Requires:	emotion-devel >= %{emotion_ver}
+Requires:	epsilon-devel >= %{epsilon_ver}
+Requires:	evas-devel >= %{evas_ver}
 
 %description devel
 EWL header files and test programs.
