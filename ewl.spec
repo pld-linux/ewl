@@ -2,22 +2,22 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	0.9.9.038
-%define		edje_ver	0.5.0.038
-%define		efreet_ver	0.0.3
-%define		emotion_ver	0.0.1
-%define		epsilon_ver	0.3.0.008
-%define		evas_ver	0.9.9.038
+%define		ecore_ver	0.9.9.043
+%define		edje_ver	0.9.9.043
+%define		efreet_ver	0.5.0.043
+%define		emotion_ver	0.1.0.042
+%define		epsilon_ver	0.3.0.012
+%define		evas_ver	0.9.9.043
 
 Summary:	Enlightenment Widget Library
 Summary(pl.UTF-8):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
-Version:	0.5.1.008
-Release:	4
+Version:	0.5.2.042
+Release:	1
 License:	BSD
 Group:		Libraries
-Source0:	http://enlightenment.freedesktop.org/files/%{name}-%{version}.tar.gz
-# Source0-md5:	d660de3d11b0b3219634c6736fe975fd
+Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
+# Source0-md5:	c25a57cdee3e58b016ad8ad5e0767902
 URL:		http://enlightenment.org/p.php?p=about/libs/ewl
 BuildRequires:	autoconf
 BuildRequires:	automake >= 1.4
@@ -130,7 +130,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libewl.so.*.*.*
+%attr(755,root,root) %{_libdir}/libewl.so.*
 %dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/engines
 # missing -avoid-version
@@ -140,7 +140,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/ewl-config
 %attr(755,root,root) %{_libdir}/libewl.so
 %{_libdir}/libewl.la
 %dir %{_includedir}/ewl
@@ -148,7 +147,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/ewl/Ewl_Test.h
 %{_includedir}/ewl/ewl_*.h
 %{_pkgconfigdir}/ewl.pc
-%{_aclocaldir}/ewl.m4
 
 %if %{with static_libs}
 %files static
