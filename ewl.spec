@@ -19,8 +19,8 @@ Group:		Libraries
 Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
 # Source0-md5:	c25a57cdee3e58b016ad8ad5e0767902
 URL:		http://enlightenment.org/p.php?p=about/libs/ewl
-BuildRequires:	autoconf
-BuildRequires:	automake >= 1.4
+BuildRequires:	autoconf >= 2.52
+BuildRequires:	automake >= 1.6
 # ecore-file ecore-txt
 BuildRequires:	ecore-devel >= %{ecore_ver}
 BuildRequires:	edje >= %{edje_ver}
@@ -117,7 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING NEWS README TODO
+%doc AUTHORS COPYING ChangeLog README
 %attr(755,root,root) %{_bindir}/ewl_config
 %attr(755,root,root) %{_bindir}/ewl_test
 %attr(755,root,root) %{_bindir}/ewl_embed_test
@@ -130,7 +130,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libewl.so.*
+%attr(755,root,root) %{_libdir}/libewl.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libewl.so.1
 %dir %{_libdir}/%{name}
 %dir %{_libdir}/%{name}/engines
 # missing -avoid-version
