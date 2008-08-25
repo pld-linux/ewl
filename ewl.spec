@@ -2,22 +2,23 @@
 # Conditional build:
 %bcond_without	static_libs	# don't build static library
 #
-%define		ecore_ver	0.9.9.043
-%define		edje_ver	0.9.9.043
-%define		efreet_ver	0.5.0.043
-%define		emotion_ver	0.1.0.042
-%define		epsilon_ver	0.3.0.012
-%define		evas_ver	0.9.9.043
+%define		ecore_ver	0.9.9.044
+%define		edje_ver	0.9.9.044
+%define		efreet_ver	0.5.0.044
+%define		emotion_ver	0.1.0.043
+%define		epsilon_ver	0.3.0.013
+%define		evas_ver	0.9.9.044
+%define		_snap	20080813
 
 Summary:	Enlightenment Widget Library
 Summary(pl.UTF-8):	Biblioteka widgetów Enlightenmenta (Enlightenment Widget Library)
 Name:		ewl
-Version:	0.5.2.042
-Release:	1
+Version:	0.5.2.043
+Release:	0.%{_snap}.1
 License:	BSD
 Group:		Libraries
-Source0:	http://download.enlightenment.org/snapshots/2008-01-25/%{name}-%{version}.tar.bz2
-# Source0-md5:	c25a57cdee3e58b016ad8ad5e0767902
+Source0:	%{name}-%{version}-%{_snap}.tar.bz2
+# Source0-md5:	bc0e325e0982fbb2246cfc69ab2beb62
 URL:		http://enlightenment.org/p.php?p=about/libs/ewl
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1.6
@@ -94,9 +95,14 @@ Static EWL library.
 Statyczna biblioteka EWL.
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-%{_snap}
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure \
 	%{!?with_static_libs:--disable-static}
 %{__make}
